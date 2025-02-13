@@ -1,3 +1,3 @@
-function showMessage() {
+function tinnhan() {
     alert('xin chào')
 }
