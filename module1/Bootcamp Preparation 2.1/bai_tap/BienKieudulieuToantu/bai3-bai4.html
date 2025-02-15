@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính chu vi,diện tích hình tròn</h2>
+    <input type="number" id="r" placeholder="Nhập bán kính">
+    <button onclick="Tinhchuvidientich()">Chuyển đổi</button>
+    <p id="result"></p> 
+    <script>
+       function Tinhchuvidientich() {
+        const pi=3.14
+        let r=Number(document.getElementById("r").value)
+        let C= 2*pi*r
+        let S= r*r*pi
+        document.getElementById("result").innerText = "Chu vi= "+C + "\nDiện tích= " + S
+       } 
+    </script>
+</body>
+</html>

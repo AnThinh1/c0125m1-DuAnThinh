@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Ly = Number(prompt('Nhập điểm Vật lý'))
+        let Hoa = Number(prompt('Nhập điểm Hoá học'))
+        let Sinh = Number(prompt('Nhập điểm Sinh học'))
+        
+        if (
+    isNaN(Ly) || isNaN(Hoa) || isNaN(Sinh) || 
+    Ly < 0 || Ly > 10 || 
+    Hoa < 0 || Hoa > 10 || 
+    Sinh < 0 || Sinh > 10
+) {
+    alert("Vui lòng nhập số hợp lệ từ 0 đến 10!");
+}
+    else {        
+let TBC= (Ly + Hoa + Sinh) /3
+        document.write('Điểm trung bình= ' + TBC)
+    }
+    </script>
+</body>
+</html>
