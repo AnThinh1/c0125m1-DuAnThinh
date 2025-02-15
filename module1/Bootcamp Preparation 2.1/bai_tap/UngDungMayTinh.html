@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <input type="Number" id="a" placeholder="Nhập số a">
+    <input type="Number" id="b" placeholder="Nhập số b"> <br>
+    <button onclick="Cong()">Cộng(+)</button>
+    <button onclick="Tru()">Trừ(-)</button>
+    <button onclick="Nhan()">Nhân(*)</button>
+    <button onclick="Chia()">Chia(/)</button>
+    <p id="result"></p>
+    <script>
+        function Cong(){
+            let a=Number(document.getElementById("a").value)
+            let b=Number(document.getElementById("b").value)
+            let Tong= a + b
+            document.getElementById("result").innerText = "a+b=" + Tong
+        }
+        function Tru(){
+            let a=Number(document.getElementById("a").value)
+            let b=Number(document.getElementById("b").value)
+            let Hieu= a - b
+            document.getElementById("result").innerText = "a-b=" + Hieu
+        }
+        function Nhan(){
+            let a=Number(document.getElementById("a").value)
+            let b=Number(document.getElementById("b").value)
+            let Tich= a * b
+            document.getElementById("result").innerText = "a*b=" + Tich
+        }
+        function Chia(){
+            let a=Number(document.getElementById("a").value)
+            let b=Number(document.getElementById("b").value)
+            if (b === 0) {
+                document.getElementById("result").innerText = "Không thể chia cho 0!";
+                return; }
+                else {
+            let Thuong= a / b
+            document.getElementById("result").innerText = "a/b=" + Thuong
+        }
+        }
+    </script>
+</body>
+</html>
