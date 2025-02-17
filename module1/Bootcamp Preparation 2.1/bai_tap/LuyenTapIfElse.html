@@ -6,14 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>What is the "official" name of JavaScript?</h2>
+    <input type="text" id="answer" placeholder="Câu trả lời">
+    <button onclick="Kiemtra()">Kiểm tra</button>
+    <p id="result"></p> 
     <script>
-
-let value = prompt('What is the "official" name of JavaScript?', '');
-if (value == 'ECMAScript') {
-  alert('Right!');
+        function Kiemtra() {
+        let answer=document.getElementById("answer").value
+if (answer == 'ECMAScript') {
+    document.getElementById("result").innerText = "Right"
 } else {
-  alert("You don't know? ECMAScript!");
-}
+    document.getElementById("result").innerText = "You don't know? ECMAScript!"
+}}
     </script>
 </body>
 </html>
