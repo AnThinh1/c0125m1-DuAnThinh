@@ -40,10 +40,10 @@
             let money = parseFloat(document.getElementById("money").value);
             let fromCurrency = document.getElementById("fromCurrency").value;
             let toCurrency = document.getElementById("toCurrency").value;
+            let result;
                 if (isNaN(money) || money <= 0) {
                     document.getElementById("result").innerText = "Tiền phải là số dương";
             }  
-            let result;
             if (fromCurrency === "VND" && toCurrency === "USD") {
                 result = money / 23000;
             } else if (fromCurrency === "USD" && toCurrency === "VND") {

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>So sánh 3 số nguyên</h2>
+    <input type="number" id="x" placeholder="Nhập số x">
+    <input type="number" id="y" placeholder="Nhập số y">
+    <input type="number" id="z" placeholder="Nhập số z">
+    <button onclick="SoSanh()">So sánh</button>
+    <p id="result"></p>
+    <script>
+        function SoSanh() {
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+            let z = document.getElementById("z").value;
+
+            if (x === "" || y === "" || z === "") {
+                document.getElementById("result").innerText = "x, y, z phải là số";
+                return;
+            }
+
+            x = Number(x);
+            y = Number(y);
+            z = Number(z);
+
+            if (isNaN(x) || isNaN(y) || isNaN(z)) {
+                document.getElementById("result").innerText = "x, y, z phải là số";
+                return;
+            }
+
+            if (x === y && y === z) {
+                document.getElementById("result").innerText = "x, y, z bằng nhau";
+            } else if (x >= y && x >= z) {
+                if (x === y) {
+                    document.getElementById("result").innerText = "x và y lớn nhất";
+                } else if (x === z) {
+                    document.getElementById("result").innerText = "x và z lớn nhất";
+                } else {
+                    document.getElementById("result").innerText = "x lớn nhất";
+                }
+            } else if (y >= x && y >= z) {
+                if (y === x) {
+                    document.getElementById("result").innerText = "y và x lớn nhất";
+                } else if (y === z) {
+                    document.getElementById("result").innerText = "y và z lớn nhất";
+                } else {
+                    document.getElementById("result").innerText = "y lớn nhất";
+                }
+            } else if (z >= x && z >= y) {
+                if (z === x) {
+                    document.getElementById("result").innerText = "z và x lớn nhất";
+                } else if (z === y) {
+                    document.getElementById("result").innerText = "z và y lớn nhất";
+                } else {
+                    document.getElementById("result").innerText = "z lớn nhất";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra a có chia hết cho b không ???</h2>
+    <input type="number" id="a" placeholder="Nhập số a">
+    <input type="number" id="b" placeholder="Nhập số b">
+    <button onclick="KiemTra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function KiemTra() {
+        let a = Number(document.getElementById("a").value);
+        let b = Number(document.getElementById("b").value);
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").innerText = "a và b phải là số";
+            return;
+        }
+        if (b === 0) {
+            document.getElementById("result").innerText = "b phải khác 0";
+            return;
+        }
+        else  if (a %b === 0) {
+            document.getElementById("result").innerText = "a chia hết cho b";
+        } else {
+            document.getElementById("result").innerText = "a không chia hết cho b";
+        }
+    }
+</script>
+</html>

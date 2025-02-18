@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Check điều kiện vào lớp 10</h2>
+    <input type="number" id="age" placeholder="Nhập tuổi">
+    <button onclick="Kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Kiemtra() {
+       let age = Number(document.getElementById("age").value);
+       if (isNaN(age) || age === 0 || age < 0){
+            document.getElementById("result").innerText = "Tuổi không hợp lệ";
+       } else if (age >= 15){
+            document.getElementById("result").innerText = "Bạn đã đủ tuổi vào lớp 10";
+       } else {
+            document.getElementById("result").innerText = "Bạn chưa đủ tuổi vào lớp 10";
+       }
+    }
+</script>
+</html>
