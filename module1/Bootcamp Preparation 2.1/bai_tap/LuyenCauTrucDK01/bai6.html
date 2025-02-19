@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+    <h2>Tính hoa hồng dựa trên doanh số bán hàng</h2>
+    <input type="number" id="sales" placeholder="Nhập doanh số bán hàng (VND)">
+    <button onclick="TinhHoaHong()">Tính hoa hồng</button>
+    <p id="result"></p>
+    <script>
+        function TinhHoaHong() {
+            let sales = parseFloat(document.getElementById("sales").value);
+
+            if (isNaN(sales) || sales < 0) {
+                document.getElementById("result").innerText = "Doanh số phải là số dương";
+                return;
+            }
+
+            let commission;
+            if (sales <= 10000000) {
+                commission = sales * 0.05; // 5% hoa hồng cho doanh số <= 10,000,000
+            } else if (sales <= 20000000) {
+                commission = 10000000 * 0.05 + (sales - 10000000) * 0.1; // 10% hoa hồng cho doanh số từ 10,001,000 đến 20,000,000
+            } else {
+                commission = 10000000 * 0.05 + 10000000 * 0.1 + (sales - 20000000) * 0.15; // 15% hoa hồng cho doanh số > 20,000,000
+            }
+
+            document.getElementById("result").innerText = `Hoa hồng nhận được: ${commission.toFixed(2)} VND`;
+        }
+    </script>
+</body>
+</html>

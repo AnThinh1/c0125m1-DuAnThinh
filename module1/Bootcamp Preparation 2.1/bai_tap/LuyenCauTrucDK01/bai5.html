@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính hoa hồng</title>
+    <title>Document</title>
 </head>
 <body>
-    <h2>Tính hoa hồng dựa trên doanh số bán hàng</h2>
-    <input type="number" id="sales" placeholder="Nhập doanh số bán hàng (VND)">
-    <button onclick="TinhHoaHong()">Tính hoa hồng</button>
+    <h2>Đánh giá học lực môn toán của học sinh</h2>
+    <input type="number", id="heso1", placeholder="Nhập điểm kiểm tra">
+    <input type="number", id="heso2", placeholder="Nhập điểm thi giữa kỳ">
+    <input type="number", id="heso3", placeholder="Nhập điểm thi cuối kỳ">
+    <button onclick="DanhGiaHocLuc()">Đánh giá</button>
     <p id="result"></p>
-    <script>
-        function TinhHoaHong() {
-            let sales = parseFloat(document.getElementById("sales").value);
-
-            if (isNaN(sales) || sales < 0) {
-                document.getElementById("result").innerText = "Doanh số phải là số dương";
-                return;
-            }
-
-            let commission;
-            if (sales <= 10000000) {
-                commission = sales * 0.05; // 5% hoa hồng cho doanh số <= 10,000,000
-            } else if (sales <= 20000000) {
-                commission = 10000000 * 0.05 + (sales - 10000000) * 0.1; // 10% hoa hồng cho doanh số từ 10,001,000 đến 20,000,000
-            } else {
-                commission = 10000000 * 0.05 + 10000000 * 0.1 + (sales - 20000000) * 0.15; // 15% hoa hồng cho doanh số > 20,000,000
-            }
-
-            document.getElementById("result").innerText = `Hoa hồng nhận được: ${commission.toFixed(2)} VND`;
-        }
-    </script>
 </body>
+<script>
+    function DanhGiaHocLuc() {
+        let diemtoan1= document.getElementById("heso1").value;
+        let diemtoan2= document.getElementById("heso2").value;
+        let diemtoan3= document.getElementById("heso3").value;
+        let diemtb= (parseFloat(diemtoan1)+parseFloat(diemtoan2)*2+parseFloat(diemtoan3)*3)/6; //điểm hệ số 1-2-3
+        if (diemtb < 5) {
+            document.getElementById("result").innerText = "Học lực yếu";
+        } else if (diemtb < 6.5) {
+            document.getElementById("result").innerText = "Học lực trung bình";
+        } else if (diemtb < 8) {
+            document.getElementById("result").innerText = "Học lực khá";
+        } else {
+            document.getElementById("result").innerText = "Học lực giỏi";
+        }
+
+    }
+</script>
 </html>
