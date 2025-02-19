@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nhập nhiệt độ °C để đổi sang °F</h2>
+    <input type="number" id="inputC" placeholder="Nhập độ C">
+    <button onclick="convertToF()">Chuyển đổi</button>
+    <p id="result"></p>
+    <script>
+    function convertToF() {
+        let C= Number(document.getElementById("inputC").value)
+        if (isNaN(C)) {
+                document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ!";
+                return;
+            }
+            let F = (C * 9/5) + 32;
+            document.getElementById("result").innerText = C + "°C = " + F + "°F";
+        }
+    </script>
+</body>
+</html>

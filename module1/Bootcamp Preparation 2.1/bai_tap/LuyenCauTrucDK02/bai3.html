@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính diện tích hình vuông</h2>
+    <input type="number" id="a" placeholder="Nhập số đo cạnh a">
+    <button onclick="Dientich()">Tính diện tích</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Dientich() {
+    let a= parseFloat(document.getElementById("a").value);
+    if ( a <= 0 || isNaN(a)) {
+        document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ!";
+        return;
+    } else {
+        
+            let S = a*a;
+            document.getElementById("result").innerText = "Diện tích hình vuông là: " + S;
+        }
+    
+}
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quy đổi m sang ft</h2>
+    <input type="number" id="inputM" placeholder="Nhập số m">
+    <button onclick="convertToft()">Chuyển đổi</button>
+    <p id="result"></p>
+    <script>
+    function convertToft() {
+        let M= Number(document.getElementById("inputM").value)
+        if (isNaN(M)) {
+                document.getElementById("result").innerText = "Vui lòng nhập số m hợp lệ!";
+                return;
+            }
+            let ft = M*3.2808;
+            document.getElementById("result").innerText = M + "m = " + ft + "ft";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="number"] {
+            width: 250px; /* Điều chỉnh chiều rộng theo ý muốn */
+        }
+    </style>
+</head>
+<body>
+    <h2>Tính diện tích hình tam giác vuông</h2>
+    <input type="number" id="a" placeholder="Nhập số đo cạnh góc vuông thứ nhất">
+    <input type="number" id="b" placeholder="Nhập số đo cạnh góc vuông thứ hai">
+    <button onclick="Dientich()">Tính diện tích</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Dientich() {
+    let a= parseFloat(document.getElementById("a").value);
+    let b= parseFloat(document.getElementById("b").value);
+    if ( a <= 0 || b <=0 || isNaN(a)|| isNaN(b)) {
+        document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ!";
+        return;
+    } else {
+        
+            let S = a*b;
+            document.getElementById("result").innerText = "Diện tích hình tam giác vuông là: " + S;
+        }
+    
+}
+</script>
+</html>
