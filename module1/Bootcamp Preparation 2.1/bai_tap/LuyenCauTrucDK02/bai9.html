@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra 3 cạnh tam giác</h2>
+    <input type="number" id="a" placeholder="Nhập số đo cạnh thứ nhất">
+    <input type="number" id="b" placeholder="Nhập số đo cạnh thứ hai">
+    <input type="number" id="c" placeholder="Nhập số đo cạnh thứ ba">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function kiemtra() {
+    let a= Number(document.getElementById("a").value);
+    let b= Number(document.getElementById("b").value);
+    let c= Number(document.getElementById("c").value);
+    if ( a <= 0 || b <= 0 || c <= 0 || isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById("result").innerText = "Đây không phải là 3 cạnh của tam giác";
+        return;
+    } else if (a + b > c && a + c > b && b + c > a) {
+        document.getElementById("result").innerText = "Đây là 3 cạnh của tam giác";
+    } else {
+        document.getElementById("result").innerText = "Đây không phải là 3 cạnh của tam giác";
+    }   
+}
+</script>
+</html>

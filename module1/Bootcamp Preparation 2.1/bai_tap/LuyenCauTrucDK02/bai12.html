@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chương trình tính lãi suất</h2>
+    <input type="number" id="money" placeholder="Nhập số tiền gửi">
+    <input type="number" id="rate" placeholder="Nhập lãi suất">
+    <input type="number" id="time" placeholder="Nhập số tháng gửi">
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+</body>
+<script>
+    function tinh() {
+        let P = parseFloat(document.getElementById("money").value); // Số tiền gốc
+        let n = parseInt(document.getElementById("time").value); // Số tháng
+        let r = parseFloat(document.getElementById("rate").value) / 100; // Lãi suất %
+
+        if (isNaN(P) || P <= 0 || isNaN(n) || n <= 0 || isNaN(r) || r <= 0) {
+            document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ!";
+            return;
+        }
+        else {
+            let A = P * Math.pow((1 + r), n); // Công thức tính lãi kép
+
+            document.getElementById("result").innerText = "Số tiền sau " + n + " tháng là: " + A;
+        }
+    }
+</script>
+</html>

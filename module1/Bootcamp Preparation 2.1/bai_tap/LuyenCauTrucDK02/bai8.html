@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra tuổi ?</h2>
+    <input type="number" id="age" placeholder="Nhập số tuổi">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function kiemtra() {
+    let age= Number(document.getElementById("age").value);
+    if ( age <= 0 || age >= 120 || isNaN(age)) {
+        document.getElementById("result").innerText = "Số tuổi không đúng";
+        return;
+    } else {
+        document.getElementById("result").innerText = "Số tuổi hợp lệ";
+    }
+    }
+</script>
+</html>
