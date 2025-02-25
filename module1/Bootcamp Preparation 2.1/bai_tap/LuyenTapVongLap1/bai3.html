@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>20 số đầu tiền của dãy Fibonacci</h2>
+</body>
+    <script>
+        let a = 0, b = 1;
+
+    for (let i = 0; i < 20; i++) {
+    document.write(a + "<br>"); 
+    let temp = a + b;
+    a = b;
+    b = temp;
+}
+
+    </script>
+</html>
