@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính điểm trung bình và xét học lực</h2>
+    <script>
+        let scoresOfA = [8, 7, 9, 8.6, 5.7, 10, 8, 9, 6];
+        let sum=0;
+        for(let i=0; i<scoresOfA.length; i++){
+            sum+=scoresOfA[i];
+        }
+        let avg=sum/scoresOfA.length;
+        if (avg >= 8) {
+            document.write('Học lực: Giỏi' + '<br>');
+        } else if (avg >= 6.5) {
+            document.write('Học lực: Khá ' + '<br>'); ;
+        } else if (avg >= 5) {
+            document.write('Học lực: Trung bình' + '<br>');
+        } else {
+            document.write('Học lực: Cook' + '<br>');
+        }
+        document.write('Điểm trung bình: ' + avg.toFixed(2) + '<br>');
+        
+    </script>
+</body>
+</html>
