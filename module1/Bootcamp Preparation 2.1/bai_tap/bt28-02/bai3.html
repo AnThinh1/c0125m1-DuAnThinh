@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>đếm số lần xuất hiện của phần tử trong mảng</h2>
+    <input type="text" id="numbersInput" placeholder="Nhập các số, cách nhau bằng dấu phẩy">
+    <input type="text" id="number" placeholder="Nhập số cần kiểm tra">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function kiemtra() {
+        let input = document.getElementById("numbersInput").value;
+        let numbers = input.split(",");
+        let number = document.getElementById("number").value;
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] == number) {
+                count++;
+            }
+        }
+        document.getElementById("result").textContent = "Số " + number + " xuất hiện " + count + " lần trong mảng";
+    }
+</script>
+</html>

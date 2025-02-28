@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng các số</title>
+</head>
+<body>
+    <h3>Nhập các số, cách nhau bằng dấu phẩy:</h3>
+    <input type="text" id="numbersInput" placeholder="Ví dụ: 1,2,3,4,5">
+    <button onclick="calculateSum()">Tính tổng</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            let input = document.getElementById("numbersInput").value;
+            let numbers = input.split(","); 
+            let sum = 0; 
+
+            for (let i = 0; i < numbers.length; i++) {
+                let num = Number(numbers[i].trim()); // Chuyển thành số và loại bỏ khoảng trắng
+                if (!isNaN(num)) { 
+                    sum += num;
+                }
+            }
+
+            document.getElementById("result").textContent = sum; // Hiển thị kết quả
+        }
+    </script>
+</body>
+</html>

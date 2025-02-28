@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tìm số lớn nhất trong mảng</h2>
+    <input type="text" id="numbersInput" placeholder="Nhập các số, cách nhau bằng dấu phẩy">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function kiemtra() {
+        let input = document.getElementById("numbersInput").value;
+        let numbers = input.split(",");
+        let max = Number(numbers[0].trim());
+        let index = 0;
+        for (let i = 1; i < numbers.length; i++) {
+            let num = Number(numbers[i].trim());
+            if (num > max) {
+                max = num;
+                index = i;
+            }
+        }
+        document.getElementById("result").textContent = "Số lớn nhất trong mảng là: " + max + " ở vị trí thứ " + index;
+    }
+    
+</script>
+</html>
