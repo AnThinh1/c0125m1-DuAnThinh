@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>Mảng và nối chuỗi</h2>
+<input type="text" id="input" placeholder="Nhập mảng">
+<button onclick="noi()">Nối chuỗi</button>
+<p id="result"></p>
+<body>
+    <script>
+        function noi() {
+        let a= document.getElementById("input").value 
+        let array = a.split(",")
+        let b= array.join()
+        document.getElementById("result").innerText= b
+        }
+    </script>
+</body>
+</html>

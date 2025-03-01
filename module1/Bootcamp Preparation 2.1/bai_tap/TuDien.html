@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Từ điển AThinh</h2>
+    <table>
+    <tr>
+        <th>Từ tiếng Việt</th>
+        <th>Từ tiếng Anh</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="TV" placeholder="Nhập từ tiếng Việt"></td>
+        <td><p id="result"></p></td>
+    </tr>
+    </table>
+    <button onclick=dich()>Dịch</button>
+    <script>
+        let tiengviet = ["xin chào","tạm biệt","xin lỗi","cảm ơn"]
+        let tienganh = ["hello","goodbye","sorry","thank you"]
+        function dich() {
+            let a= document.getElementById("TV").value.trim().toLowerCase()
+            let index = tiengviet.indexOf(a)
+            if (index !== -1) {
+                document.getElementById("result").innerText = tienganh[index];
+            } else {
+                document.getElementById("result").innerText = "Không tìm thấy từ này";
+            }
+        }
+    </script>
+</body>
+</html>
