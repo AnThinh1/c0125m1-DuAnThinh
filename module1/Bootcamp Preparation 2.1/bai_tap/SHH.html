@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra số hoàn hảo</h2>
+    <input type="number" id="number" placeholder="Nhập số">
+    <button onclick="KetQua()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function LayGTInput() {
+        return parseInt(document.getElementById("number").value)
+    }
+    function KiemTraGT(number) {
+        return !isNaN(number) && number > 0 
+    }
+    function KiemTraSHH(number) {
+        let sum = 0;
+            for (let i = 1; i <= number / 2; i++) {
+                if (number % i === 0) {
+                    sum += i;
+                }
+            }
+            return sum === number;
+    }
+    function KetQua() {
+        let number = LayGTInput()
+        if(!KiemTraGT(number)) {
+            document.getElementById("result").innerText="Số không hợp lệ"
+            return
+        }
+            let result = KiemTraSHH(number) ? "là số hoàn hảo" : "không phải số hoàn hảo";
+            document.getElementById("result").innerText = `${number} ${result}`;
+        }
+    
+</script>
+</html>
