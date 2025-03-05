@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra cặp số hoàn hảo</h2>
+    <button onclick="KTsothanthiet()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+      // Hàm lấy giá trị từ prompt
+      function LayGTInput() {
+            let a = parseInt(prompt("Nhập số thứ nhất:"));
+            let b = parseInt(prompt("Nhập số thứ hai:"));
+            return [a, b];
+        }
+        // Hàm kiểm tra số nguyên dương
+        function KiemTraNguyenDuong(num) {
+            return !isNaN(num) && num > 0 && num%1===0;
+        }
+        // Hàm kiểm tra cặp số thân thiết (gộp cả tính tổng ước số)
+        function LaCapSoThanThiet(a, b) {
+            function TongUocSo(n) {
+                let sum = 0;
+                for (let i = 1; i <= n / 2; i++) {
+                    if (n % i === 0) {
+                        sum += i;
+                    }
+                }
+                return sum;
+            }
+            return TongUocSo(a) === b && TongUocSo(b) === a;
+        }
+        function KTsothanthiet() {
+            let [a,b] = LayGTInput() 
+            if (!KiemTraNguyenDuong(a) || !KiemTraNguyenDuong(b)) {
+                document.getElementById("result").innerText = "Vui lòng nhập hai số nguyên dương hợp lệ.";
+                return;
+            } 
+            if (LaCapSoThanThiet(a, b)) {
+            document.getElementById("result").innerText = `${a} và ${b} là cặp số thân thiết`;
+        } else {
+            document.getElementById("result").innerText = `${a} và ${b} không phải cặp số thân thiết`;
+        }
+        }
+</script>
+</html>
