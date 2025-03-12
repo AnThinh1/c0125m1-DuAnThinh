@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Nhập đối số">
+    <button onclick="increaseNumber()">Tăng lên 1</button>
+    <p id="result"></p>
+</body>
+   <script>
+     function increaseNumber() {
+        let number = parseInt(document.getElementById("num").value)
+        if (!isNaN(number)) {
+            let num = number + 1
+            document.getElementById("result").innerText= "Kết quả:" + num
+         } else {
+            document.getElementById("result").innerText= "Vui lòng nhập số hợp lệ"
+         }
+
+        
+    }
+   </script>
+</html>
