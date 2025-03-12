@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit">
+        <button onclick="temperatureConverter(document.getElementById('inputFahrenheit').value)">chuyển đổi</button>
+      </p>
+      Celsius: <span id="result"></span>
+</body>
+<script>
+    function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("result").innerHTML =  (valNum-32) / 1.8;
+    }
+</script>
+</html>
