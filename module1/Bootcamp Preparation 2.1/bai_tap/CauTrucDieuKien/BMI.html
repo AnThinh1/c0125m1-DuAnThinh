@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="weight" placeholder="Nhập cân nặng (kg)"> <br>
+    <input type="number" id="height" placeholder="Nhập chiều cao (m)"> <br> <br>
+    <button onclick="tinh()">Tính BMI</button>
+    <p id="result"></p>
+</body>
+<script>
+function tinh() {
+    let weight = parseFloat(document.getElementById("weight").value);
+    let height = parseFloat(document.getElementById("height").value);
+
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        document.getElementById("result").innerText = "Vui lòng nhập cân nặng và chiều cao hợp lệ.";
+        return;
+    }
+
+    let bmi = weight / (height * height);
+    let interpretation = "";
+
+    if (bmi < 18.5) {
+        interpretation = "Thiếu cân";
+    } else if (bmi < 25) {
+        interpretation = "Bình thường";
+    } else if (bmi < 30) {
+        interpretation = "Thừa cân";
+    } else {
+        interpretation = "Béo phì";
+    }
+
+    document.getElementById("result").innerText = "Chỉ số BMI của bạn là: " + bmi.toFixed(2) + ". Bạn đang ở trạng thái: " + interpretation;
+}
+</script>
+</html>
