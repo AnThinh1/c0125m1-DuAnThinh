@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body > p:first-of-type {
+        border-bottom: 2px dashed #000; 
+        padding-bottom: 5px; 
+    }
+</style>
+<body>
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satisfation survey.</p>
+    <h3>What is your age range?</h3>
+    <select name="age">
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-50</option>
+        <option>50+</option>
+    </select>
+    <h3>Gender Identity</h3>
+    <input type="radio" name="gender" value="male"> Male <br>
+    <input type="radio" name="gender" value="famale"> Female <br>
+    <input type="radio" name="gender" value="nonbinary"> Nonbinary <br>
+    <input type="radio" name="gender" value="other" id="otherGender"> Other <br> <input type="text" name="other" id="otherInput">
+    <h3>Which of the follow products have your purchased in last 2 months. Please check all that apply.</h3>
+    
+    <input type="checkbox" id="product1" name="products" value="product1">
+    <label for="product1">Product 1</label><br>
+
+    <input type="checkbox" id="product2" name="products" value="product2">
+    <label for="product2">Product 2</label><br>
+
+    <input type="checkbox" id="product3" name="products" value="product3">
+    <label for="product3">Product 3</label>
+    <h3>How often would you use our new product?</h3>
+    <input type="radio" name="frequency" value="Daily"> Daily <br>
+    <input type="radio" name="frequency" value="Weekly"> Weekly <br>
+    <input type="radio" name="frequency" value="Monthly"> Monthly <br>
+    <h3>What would you pay for the new product?</h3>
+    $<input type="text" name="dollars" placeholder="Dollars">.<input type="text" name="cents" placeholder="Cents">
+    <h3>What feathers would you like to see in the new product.</h3>
+    <textarea name="features" rows="4" cols="50"></textarea>
+    <p>Please rate your level of agreement with the following statements</p>
+    <table>
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+        <tr>
+            <td>Our products are priced fairly.</td>
+            <td><input type="radio" name="level" value="1">1</td>
+            <td><input type="radio" name="level" value="2">2</td>
+            <td><input type="radio" name="level" value="3">3</td>
+            <td><input type="radio" name="level" value="4">4</td>  
+        </tr>
+        <tr>
+            <td>Our products are high quality.</td>
+            <td><input type="radio" name="level" value="1">1</td>
+            <td><input type="radio" name="level" value="2">2</td>
+            <td><input type="radio" name="level" value="3">3</td>
+            <td><input type="radio" name="level" value="4">4</td>  
+        </tr>
+        <tr>
+            <td>You would recommend out product to a friend or coworker.</td>
+            <td><input type="radio" name="level" value="1">1</td>
+            <td><input type="radio" name="level" value="2">2</td>
+            <td><input type="radio" name="level" value="3">3</td>
+            <td><input type="radio" name="level" value="4">4</td>  
+        </tr>
+    </table>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        /* Làm đậm dòng 1 (tiêu đề) */
+        th {
+            background-color: #e0e0e0; /* Xám nhẹ giống mẫu */
+        }
+        tr:nth-child(3) td {
+            background-color: #e0e0e0 /* Màu nền xám nhẹ */
+}
+    </style>
+</body>
+</html>
