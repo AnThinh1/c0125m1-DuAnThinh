@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng cửu chương</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th {
+            font-size: 24px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><b>Bảng cửu chương</b></h2>
+    <table id="bangCuuChuong"></table>
+
+    <script>
+        let table = document.getElementById("bangCuuChuong");
+
+        for (let i = 1; i <= 10; i++) {
+            let row = document.createElement("tr");
+
+            for (let j = 1; j <= 10; j++) {
+                let cell = document.createElement("td");
+                cell.innerText = `${j} * ${i} = ${j * i}`;
+                row.appendChild(cell);
+            }
+
+            table.appendChild(row);
+        }
+    </script>
+
+</body>
+</html>
