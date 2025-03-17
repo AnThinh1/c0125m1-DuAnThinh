@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+    <h2>Dãy số Fibonacci</h2>
+    <script>
+        let n = parseInt(prompt("Nhập số lượng số Fibonacci cần tạo:"));
+        let a = 0, b = 1;
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        for (let i = 3; i <= n; i++) {
+            let c = a + b;
+            document.write(c + "<br>");
+            a = b;
+            b = c;
+        }
+    </script>
+</body>
+</html>
