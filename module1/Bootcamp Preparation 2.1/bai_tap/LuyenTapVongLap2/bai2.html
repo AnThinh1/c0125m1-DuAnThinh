@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính giai thừa</h2>
+    <input type="number" id="n" placeholder="Nhập số nguyên dương" style="width: 200px;">
+    <button onclick="TinhGiaiThua()">Tính</button>
+    <p id="result"></p>
+</body>
+<script>
+    function TinhGiaiThua() {
+    let n= parseInt(document.getElementById("n").value)
+    if (n < 0) {
+        document.getElementById("result").innerText="Vui long nhap so nguyen hop le"
+    } else {
+        let a =1
+        for(let i=1; i<=n; i++)
+        a *= i
+        document.getElementById("result").innerText= "Kết quả: " + a
+    }
+}
+
+</script>
+</html>

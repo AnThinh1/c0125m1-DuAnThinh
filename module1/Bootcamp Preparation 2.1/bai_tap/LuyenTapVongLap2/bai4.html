@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Vẽ hình chữ nhật</h2>
+    <input type="number" id="width" placeholder="Nhập chiều rộng">
+    <input type="number" id="height" placeholder="Nhập chiều cao">
+    <button onclick="drawRectangle()">Vẽ</button>
+    <pre id="result"></pre> 
+
+    <script>
+        function drawRectangle() {
+            let width = parseInt(document.getElementById("width").value);
+            let height = parseInt(document.getElementById("height").value);
+            let result = "";
+
+            for (let i = 0; i < height; i++) {
+                for (let j = 0; j < width; j++) {
+                    result += "* ";
+                }
+                result += "\n"; // 
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

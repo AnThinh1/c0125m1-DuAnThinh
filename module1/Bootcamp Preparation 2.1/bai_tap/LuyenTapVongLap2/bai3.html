@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In tam giác vuông</title>
+</head>
+<body>
+    <script>
+        let n = 5; // Số dòng của tam giác
+
+        document.write("<h3>Góc vuông BOTTOM-LEFT</h3>");
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h3>Góc vuông TOP-LEFT</h3>");
+        for (let i = n; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h3>Góc vuông BOTTOM-RIGHT</h3>");
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= n - i; j++) {
+                document.write("&nbsp;&nbsp;"); // In khoảng trắng
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h3>Góc vuông TOP-RIGHT</h3>");
+        for (let i = n; i >= 1; i--) {
+            for (let j = 1; j <= n - i; j++) {
+                document.write("&nbsp;&nbsp;"); // In khoảng trắng
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
