@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên lớn hơn 10 trong mảng</h2>
+    <input type="text" id="a" placeholder="Nhập chuỗi a cách nhau bởi dấu phẩy..." style="width: 250px;" + > <br>
+    <input type="text" id="b" placeholder="Nhập chuỗi b cách nhau bởi dấu phẩy..." style="width: 250px;">
+    <button onclick="Test()">Kiểm tra</button>
+    <p>Thêm vào chuỗi c, kết quả: <span id="result"></span></p>
+</body>
+<script>
+    function Test() {
+    let a=document.getElementById("a").value.split(",").map(Number)
+    let b=document.getElementById("b").value.split(",").map(Number)
+    let c = [1,2,3,4,5]
+    let ab= a.concat(b)
+    let abc= c.concat(ab)
+    document.getElementById("result").innerText=abc }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên lớn hơn 10 trong mảng</h2>
+    <input type="text" id="mang" placeholder="Nhập chuỗi cách nhau bởi dấu phẩy..." style="width: 250px;">
+    <button onclick="Test()">Kiểm tra</button>
+    <p>Số các số nguyên lớn hơn 10: <span id="result"></span></p>
+</body>
+<script>
+    function Test() {
+        let mang= document.getElementById("mang").value.split(",").map(Number)
+        dem=0
+        for (let i=0; i< mang.length; i++){
+            if (mang[i] > 10){
+                dem++
+            }
+        }
+        document.getElementById("result").innerText= dem 
+    }
+</script>
+</html>

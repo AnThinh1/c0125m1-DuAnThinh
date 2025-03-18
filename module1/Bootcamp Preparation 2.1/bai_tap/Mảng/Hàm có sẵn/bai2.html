@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chèn dấu - giữa số chẵn</title>
+</head>
+<body>
+    <h3>Nhập chuỗi số:</h3>
+    <input type="text" id="inputNumber" placeholder="Nhập chuỗi số">
+    <button onclick="insertDash()">Chèn dấu -</button>
+    <p>Kết quả: <span id="result"></span></p>
+
+    <script>
+        function insertDash() {
+            let numStr = document.getElementById("inputNumber").value;
+            let result = numStr[0]; 
+
+            for (let i = 1; i < numStr.length; i++) {
+                // Nếu cả hai số liên tiếp là số chẵn
+                if (numStr[i - 1] % 2 === 0 && numStr[i] % 2 === 0) {
+                    result += "-"; // Chèn dấu "-"
+                }
+                result += numStr[i]; // Thêm số vào chuỗi kết quả
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

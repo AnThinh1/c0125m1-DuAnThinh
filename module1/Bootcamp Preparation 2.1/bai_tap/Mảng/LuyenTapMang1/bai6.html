@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra phần tử có trong mảng không ?</h2>
+    <input type="text" id="mang" placeholder="Nhập chuỗi cách nhau bởi dấu phẩy..." style="width: 250px;">
+    <input type="number" id="V" placeholder="Nhập số nguyên cần tìm...">
+    <button onclick="Test()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Test() {
+        let V= Number(document.getElementById("V").value)
+        let mang= document.getElementById("mang").value.split(",").map(Number)
+        for (let i=0; i<mang.length; i++)
+        if (mang[i]=== V) {
+            document.getElementById("result").innerText=V+ " is in the array"
+            break;
+        } else {
+            document.getElementById("result").innerText=V+ " is not in the array"
+        }
+    }
+</script>
+</html>

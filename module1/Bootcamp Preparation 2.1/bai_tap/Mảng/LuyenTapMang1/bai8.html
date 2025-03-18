@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sắp xếp theo thứ tự giảm dần</h2>
+    <input type="text" id="mang" placeholder="Nhập chuỗi cách nhau bởi dấu phẩy..." style="width: 250px;">
+    <button onclick="Test()">Kiểm tra</button>
+    <p>Thứ tự giảm dần: <span id="result"></span></p>
+</body>
+<script>
+    function Test() {
+        let mang= document.getElementById("mang").value.split(",").map(Number)
+        mang.sort((a, b) => b - a);
+        document.getElementById("result").innerText= mang
+    }
+</script>
+</html>
