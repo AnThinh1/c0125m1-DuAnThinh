@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    let arr = ['a', '5', 'b', '1', '9', 'd', '3', 'z', '8', '@', '-'];
+    let newarr = arr.map(char => char === "-" ? "_" : char);
+    document.getElementById("result").innerText = newarr.join(", ");
+</script>
+</html>
