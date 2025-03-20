@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tăng giá trị</title>
 </head>
 <body>
-    <input type="number" id="num" placeholder="Nhập đối số">
-    <button onclick="increaseNumber()">Tăng lên 1</button>
+    <h2>Kết quả:</h2>
+    <input type="number" id="inputNumber" placeholder="Nhập số...">
+    <button onclick="increaseandShow()">Tăng</button>
     <p id="result"></p>
-</body>
-   <script>
-     function increaseNumber() {
-        let number = parseInt(document.getElementById("num").value)
-        if (!isNaN(number)) {
-            let num = number + 1
-            document.getElementById("result").innerText= "Kết quả:" + num
-         } else {
-            document.getElementById("result").innerText= "Vui lòng nhập số hợp lệ"
-         }
 
-        
-    }
-   </script>
+    <script>
+        function increaseandShow() {
+         let inputNumber= Number(document.getElementById("inputNumber").value)
+         if (isNaN(inputNumber)) {
+                document.getElementById("result").innerText = "Vui lòng nhập một số hợp lệ!";
+                return;
+            }
+         let result = increaseNumber(inputNumber);
+         document.getElementById("result").innerText= "Giá trị sau khi tăng: " + result
+        }
+        function increaseNumber(number) {
+            return number + 1;
+        }
+    </script>
+</body>
 </html>

@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Hàm nhận 2 tham số a và b</h2>
+    <input type="number" id="a" placeholder="Nhập số a">
+    <input type="number" id="b" placeholder="Nhập số b">
+    <button onclick="Test2()">Kiểm tra</button>
+    <p id="result"></p>
 </body>
+<script>
+    function Test(a, b) {
+        if (a > b) {
+            return "a > b";
+        } else {
+            return "Tổng 2 số: " + (a + b);
+        }
+    }
+    function Test2() {
+        let a= Number(document.getElementById("a").value)
+        let b= Number(document.getElementById("b").value)
+        let result = Test(a,b)
+        document.getElementById("result").innerText= result
+    }
+</script>
 </html>
