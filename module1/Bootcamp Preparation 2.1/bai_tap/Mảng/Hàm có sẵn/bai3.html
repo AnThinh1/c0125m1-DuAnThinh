@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chuyển đổi chữ hoa thành chữ thường và ngược lại</h2>
+    <input type="text" id="text" placeholder="Nhập chuỗi">
+    <button onclick="Text()">Chuyển đổi</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Text() {
+        let text= document.getElementById("text").value
+        let result = ""
+        for (let i=0 ; i< text.length ; i ++) {
+            let char = text[i] 
+            if (char == char.toUpperCase()) {
+                result += char.toLowerCase()
+            } else {
+                result += char.toUpperCase()
+            }
+        }
+        document.getElementById("result").innerHTML= result
+    }
+</script>
+</html>
