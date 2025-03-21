@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="chuoi1" placeholder="Nhập chuỗi 1">
+    <input type="text" id="chuoi2" placeholder="Nhập chuỗi 2"> <br>
+    <button onclick="test()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function test() {
+        let text1 = document.getElementById("chuoi1").value.split(",");
+        let text2 = document.getElementById("chuoi2").value.split(",");
+
+        if (text1.length !== text2.length) {
+            document.getElementById("result").innerText = "2 chuỗi khác nhau";
+            return;
+        }
+
+        let isEqual = true;
+        for (let i = 0; i < text1.length; i++) {
+            if (text1[i].trim() !== text2[i].trim()) {
+                isEqual = false;
+                break;
+            }
+        }
+
+        if (isEqual) {
+            document.getElementById("result").innerText = "2 chuỗi giống nhau";
+        } else {
+            document.getElementById("result").innerText = "2 chuỗi khác nhau";
+        }
+    }
+</script>
+</html>
