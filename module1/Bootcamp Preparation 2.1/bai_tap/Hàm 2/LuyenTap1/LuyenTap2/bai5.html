@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên nhỏ nhất</h2>
+    <input type="text" id="a" placeholder="Nhập số a">
+    <input type="text" id="b" placeholder="Nhập số b">
+    <input type="text" id="c" placeholder="Nhập số c">
+    <button onclick="Test()">Kiểm tra </button>
+    <p id="result"></p>
+</body>
+<script>
+    function Test1(a,b,c) {
+        if (isNaN(a) || isNaN(b) || isNaN(c) || !Number.isInteger(a)||  !Number.isInteger(b) || !Number.isInteger(c)) {
+            return false; 
+        } else {
+            return true;
+        }
+    }
+    function Test() {
+        let a= Number(document.getElementById("a").value)
+        let b= Number(document.getElementById("b").value)
+        let c= Number(document.getElementById("c").value)
+        let Valid = Test1(a,b,c)
+        if (Valid) {
+            if (a<b) {
+                if (a<c) {
+                    document.getElementById("result").innerText = "Sô nhỏ nhất là: " + a
+                } else {
+                    document.getElementById("result").innerText = "Sô nhỏ nhất là: " + c
+                }
+            } else {
+                document.getElementById("result").innerText = "Sô nhỏ nhất là: " + b
+            }
+        } else {
+            document.getElementById("result").innerText = "Vui lòng nhập số nguyên"
+        }
+    }
+    
+</script>
+</html>

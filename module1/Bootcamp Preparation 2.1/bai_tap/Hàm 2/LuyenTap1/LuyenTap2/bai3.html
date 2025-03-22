@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+    <h2>Tính giai thừa của một số</h2>
+    <input type="text" id="a" placeholder="Nhập số">
+    <button onclick="GiaiThua()">Tính</button>
+    <p id="result"></p>
+</body>
+<script>
+    function factorial(n) {
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    function GiaiThua() {
+        let a = document.getElementById("a").value.trim();  
+        a = a.replace(",", ".");
+        let n = parseFloat(a);
+        if (isNaN(n) || !Number.isInteger(n) || n < 0) {
+            document.getElementById("result").innerText = "Vui lòng nhập số nguyên không âm!";
+            return;
+        }
+
+        let b = factorial(n);
+        document.getElementById("result").innerText = b;
+    }
+</script>
+</html>

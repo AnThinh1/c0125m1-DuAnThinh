@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra kí tự số</h2>
+    <input type="text" id="a" placeholder="Nhập số">
+    <button onclick="Test()">Kiểm tra </button>
+    <p id="result"></p>
+</body>
+<script>
+    function Test1(a) {
+        if (isNaN(a) || a==="") {
+            return false
+        } else {
+            return true
+        }
+    }
+    function Test() {
+        let a=document.getElementById("a").value
+        let valid = Test1(a)
+        if (valid) {
+            document.getElementById("result").innerText= "Ký tự nhập vào là số"
+        } else {
+            document.getElementById("result").innerText= "Ký tự nhập vào không phải là số"
+        }
+    }
+</script>
+</html>

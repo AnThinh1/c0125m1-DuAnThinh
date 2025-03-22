@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính chu vi và diện tích hình tròn có bán kính r</h2>
+    <input type="number" id="r" placeholder="Nhập bán kính">
+    <button onclick="ChuviDientich()">Tính</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Tinh(a) {
+        if (isNaN(a) || a < 0) {
+            return false
+        } else {
+            return true
+        }
+    }
+    function ChuviDientich() {
+        let r= parseFloat(document.getElementById("r").value)
+        let result = Tinh(r)
+        if (result) {
+            document.getElementById("result").innerHTML= "Chu vi hình tròn: " + (2*r*Math.PI).toFixed(2) + "<br>" + "Diện tích hình tròn: " + (r*r*Math.PI).toFixed(2)
+        } else {
+            document.getElementById("result").innerText= "Nhập số hợp lệ" 
+        }
+    }
+</script>
+</html>

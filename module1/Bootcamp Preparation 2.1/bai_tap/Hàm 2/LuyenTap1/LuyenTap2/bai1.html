@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính bình phương của một số</h2>
+    <input type="number" id="n" placeholder="Nhập số...">
+    <button onclick="Binhphuong()">Tính bình phương</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Bp(a) {
+        if (isNaN(a) || a==="") {
+            return false
+        } else {
+            return true
+        }
+    }
+    function Binhphuong() {
+        let n=  parseFloat(document.getElementById("n").value)
+        let result = Bp(n)
+        if (result) {
+            document.getElementById("result").innerText= "Bình phương: " + (n*n)
+        } else {
+            document.getElementById("result").innerText= "Nhập số hợp lệ"
+        }
+    }
+</script>
+</html>

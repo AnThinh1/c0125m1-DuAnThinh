@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên dương</h2>
+    <input type="text" id="a" placeholder="Nhập số nguyên">
+    <button onclick="Test()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function Test1(a) {
+        if (!Number.isInteger(a) || a <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+    function Test() {
+        let input = document.getElementById("a").value.trim();
+        if (input === "" || isNaN(input)) {
+            document.getElementById("result").innerText = "Vui lòng nhập một số hợp lệ!";
+            return;
+        }
+
+        let a = Number(input); 
+        let Valid = Test1(a);
+        if (Valid) {
+            document.getElementById("result").innerText = a + " là số nguyên dương.";
+        } else {
+            document.getElementById("result").innerText = a + " không phải là số nguyên dương.";
+        }
+    }
+</script>
+</html>
