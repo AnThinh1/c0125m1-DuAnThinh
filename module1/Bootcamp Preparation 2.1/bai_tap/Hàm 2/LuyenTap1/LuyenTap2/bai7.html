@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Đổi chỗ 2 số nguyên</h2>
+    <input type="text" id="n1" placeholder="Số nguyên 1">
+    <input type="text" id="n2" placeholder="Số nguyên 2">
+    <button onclick="Swap()">Đổi vị trí</button>
+    <p id="result1"></p>
+    <p id="result2"></p>
+</body>
+<script>
+    function Test(a, b) {
+        if (!Number.isInteger(a) || !Number.isInteger(b)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function Swap() {
+        let a = Number(document.getElementById("n1").value);
+        let b = Number(document.getElementById("n2").value);
+        let Valid = Test(a, b);
+        if (Valid) {
+            document.getElementById("result1").innerText = "Trước khi đổi: a= " + a + " b= " + b;
+            let temp = a;
+            a = b;
+            b = temp;
+            document.getElementById("result2").innerText = "Sau khi đổi: a= " + a + " b= " + b;
+        } else {
+            document.getElementById("result1").innerText = "Vui lòng nhập số nguyên hợp lệ!";
+            document.getElementById("result2").innerText = "";
+        }
+    }
+</script>
+</html>

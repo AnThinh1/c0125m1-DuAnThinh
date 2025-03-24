@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+    <h2>Đảo ngược mảng</h2>
+    <input type="text" id="arr" placeholder="Nhập mảng, cách nhau bởi dấu phẩy">
+    <button onclick="ReverseArray()">Đảo ngược</button>
+    <p id="result"></p>
+</body>
+<script>
+    function ReverseArray() {
+        let arr = document.getElementById("arr").value.split(",");
+        let newArr = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+            newArr.push(arr[i]);
+        }
+        document.getElementById("result").innerText = "Mảng sau khi đảo ngược: " + newArr.join(",");
+    }
+</script>
+</html>
