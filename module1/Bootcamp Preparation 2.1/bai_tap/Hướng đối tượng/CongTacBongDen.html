@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng Công Tắc & Đèn</title>
+</head>
+<body>
+    <h2>Mô phỏng Công Tắc & Đèn</h2>
+    <p id="status">💡 Bóng đèn ĐANG TẮT</p>
+    <button onclick="toggleSwitch()">Bật/Tắt Công Tắc</button>
+
+    <script>
+        class ElectricLamp {
+            constructor() {
+                this.status = false; // Ban đầu bóng đèn tắt
+            }
+
+            turnOn() {
+                this.status = true;
+            }
+
+            turnOff() {
+                this.status = false;
+            }
+
+            getStatus() {
+                return this.status ? "💡 Bóng đèn ĐANG SÁNG" : "💡 Bóng đèn ĐANG TẮT";
+            }
+        }
+
+        class SwitchButton {
+            constructor() {
+                this.status = false; // Ban đầu công tắc tắt
+                this.lamp = null;
+            }
+
+            connectToLamp(lamp) {
+                this.lamp = lamp; // Kết nối công tắc với bóng đèn
+            }
+
+            switchOn() {
+                if (this.lamp) {
+                    this.status = true;
+                    this.lamp.turnOn();
+                }
+            }
+
+            switchOff() {
+                if (this.lamp) {
+                    this.status = false;
+                    this.lamp.turnOff();
+                }
+            }
+
+            toggle() {
+                if (this.status) {
+                    this.switchOff();
+                } else {
+                    this.switchOn();
+                }
+            }
+        }
+
+        let myLamp = new ElectricLamp();
+        let mySwitch = new SwitchButton();
+        mySwitch.connectToLamp(myLamp);
+
+        function toggleSwitch() {
+            mySwitch.toggle();
+            document.getElementById("status").innerText = myLamp.getStatus();
+        }
+    </script>
+</body>
+</html>
