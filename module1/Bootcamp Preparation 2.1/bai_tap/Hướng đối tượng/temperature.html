@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <h2>Chuyển đổi nhiệt độ</h2>
+    <label for="doC">Nhập nhiệt độ (°C):</label>
+    <input type="number" id="doC" placeholder="Nhập nhiệt độ">
+    <button onclick="Temp()">Chuyển đổi</button>
+    <p id="k"></p>
+    <p id="f"></p>
+</body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        
+        getK() {
+            return this.doC + 273.15;
+        }
+
+        getF() {
+            return this.doC * 9 / 5 + 32;
+        }
+    }
+
+    function Temp() {
+        let doC = parseFloat(document.getElementById("doC").value);
+        if (isNaN(doC)) {
+            alert("Vui lòng nhập một số hợp lệ!");
+            return;
+        }
+        let newTemperature = new Temperature(doC);
+        document.getElementById("k").innerText = "Nhiệt độ K: " + newTemperature.getK().toFixed(2);
+        document.getElementById("f").innerText = "Nhiệt độ F: " + newTemperature.getF().toFixed(2);
+    }
+</script>
+</html>
