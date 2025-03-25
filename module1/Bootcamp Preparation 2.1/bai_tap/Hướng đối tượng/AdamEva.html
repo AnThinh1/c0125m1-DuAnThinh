@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam và Eva - Ăn Táo</title>
+</head>
+<body>
+  <h1>Adam và Eva - Mô phỏng ăn táo</h1>
+  <button onclick="runScenario()">Chạy Kịch Bản</button>
+  <div id="log"></div>
+
+  <script>
+    class Apple {
+        constructor() {
+            this.weight = 10; // Táo có 10 đơn vị
+        }
+        getWeight() {
+            return this.weight;
+        }
+        isEmpty() {
+            return this.weight <= 0;
+        }
+        decrease() {
+            if (!this.isEmpty()) {
+                this.weight--;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        eat(apple) {
+            if (!apple.isEmpty()) {
+                apple.decrease();
+                this.weight++;
+                logMessage(`${this.name} ăn một miếng táo. Cân nặng: ${this.weight}, Táo còn: ${apple.getWeight()}`);
+            } else {
+                logMessage(`${this.name} muốn ăn nhưng táo đã hết!`);
+            }
+        }
+    }
+
+    function logMessage(message) {
+        document.getElementById("log").innerHTML += message + "<br>";
+    }
+
+    function runScenario() {
+        document.getElementById("log").innerHTML = ""; // Xóa log cũ
+        let apple = new Apple();
+        let adam = new Human("Adam", "male", 70);
+        let eva = new Human("Eva", "female", 50);
+
+        while (!apple.isEmpty()) {
+            adam.eat(apple);
+            if (!apple.isEmpty()) {
+                eva.eat(apple);
+            }
+        }
+
+        logMessage("Táo đã hết, kết thúc kịch bản!");
+    }
+  </script>
+</body>
+</html>
