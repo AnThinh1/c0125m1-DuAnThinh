@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số hoàn hảo</title>
+</head>
+<body>
+    <h2>Kiểm tra số hoàn hảo</h2>
+    <input type="text" id="number" placeholder="Nhập số nguyên dương">
+    <button onclick="Test()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function isPerfectNum(n) {
+        if (n<=0) {
+            return false
+        }
+            let sum = 0
+            for (let i = 1; i <= n / 2; i++) {
+                if (n % i === 0) sum += i
+            }
+            if (sum === n) {
+                return true
+             } else {
+                return false
+    }
+        
+    }
+    function Test() {
+        let n = Number(document.getElementById("number").value)
+        if (isNaN(n) || n <=0 ||!Number.isInteger(n)) {
+            document.getElementById("result").innerText = "Vui lòng nhập một số nguyên dương hợp lệ!"
+            return
+        }
+        else {
+            
+        if (isPerfectNum(n)) {
+            document.getElementById("result").innerText = n + " là số hoàn hảo "
+        } else {
+            document.getElementById("result").innerText = n + " không phải là số hoàn hảo "
+        }
+        }
+        
+    } 
+    
+</script>
+</html>

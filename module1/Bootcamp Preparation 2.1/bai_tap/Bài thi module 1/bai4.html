@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí công nhân</title>
+</head>
+<body>
+    <h2>Quản lý công nhân </h2>
+    <label>Họ và tên</label> <input type="text" id="name"> <br>
+    <label>Ngày sinh</label> <input type="date" id="dob"> <br>
+    <label>Địa chỉ</label> <input type="text" id="address"> <br>
+    <label>Lương</label> <input type="text" id="salary"> <br>
+    <label>Chức vụ</label> <input type="text" id="position"> <br>
+    <button onclick="Add()">Thêm công nhân</button>
+    <button onclick="displayWorkers()">Hiển thị bảng</button>
+    <table id="workerTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ và Tên</th>
+                <th>Ngày Sinh</th>
+                <th>Địa Chỉ</th>
+                <th>Lương</th>
+                <th>Chức Vụ</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<script>
+    class Worker {
+        name
+        dob
+        address
+        salary
+        position
+        constructor(name,dob,address,salary,position) {
+            this.name=name
+            this.dob=dob
+            this.address=address
+            this.salary=salary
+            this.position=position
+        }
+    }
+    let workers= []
+    function Add() {
+        let name = document.getElementById("name").value.trim()
+        let dob = document.getElementById("dob").value.trim()
+        let address = document.getElementById("address").value.trim()
+        let salary = document.getElementById("salary").value.trim()
+        let position = document.getElementById("position").value.trim()
+    
+    if (!name || !dob || !address || !salary || !position) {
+                alert("Vui lòng nhập đầy đủ thông tin!")
+                return
+            }
+        workers.push(new Worker(name, dob, address, parseFloat(salary), position))
+            alert("Thêm công nhân thành công!")
+    }
+    function displayWorkers() {
+    let table = document.getElementById("workerTable")
+    let tbody = table.getElementsByTagName("tbody")[0]
+    tbody.innerHTML = ""
+
+    for (let i = 0; i < workers.length; i++) {
+        let worker = workers[i];
+
+        tbody.innerHTML += "<tr>" +
+            "<td>" + (i + 1) + "</td>" +
+            "<td>" + worker.name + "</td>" +
+            "<td>" + worker.dob + "</td>" +
+            "<td>" + worker.address + "</td>" +
+            "<td>" + worker.salary + "</td>" +
+            "<td>" + worker.position + "</td>" +
+        "</tr>"
+    }
+}
+</script>
+</html>

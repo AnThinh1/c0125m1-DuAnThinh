@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số ngày trong tháng</title>
+</head>
+<body>
+    <h2>Nhập tháng và năm</h2>
+    <input type="number" id="month" placeholder="Tháng (1-12)">
+    <input type="number" id="year" placeholder="Năm">
+    <button onclick="calculateDays()">Tính</button>
+    <p id="result"></p>
+
+    <script>
+        function getDaysInMonth(month, year) {
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    return 31
+                case 4: case 6: case 9: case 11:
+                    return 30
+                case 2:
+                if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                return 29
+                } else {
+                return 28
+            }
+                    default:
+                return 0
+            }
+        }
+
+        function calculateDays() {
+            let month = Number(document.getElementById("month").value)
+            let year = Number(document.getElementById("year").value)
+
+            if (month < 1 || month > 12 || year < 1) {
+                document.getElementById("result").innerText = "Vui lòng nhập tháng và năm hợp lệ."
+                return
+            }
+
+            let days = getDaysInMonth(month, year)
+            document.getElementById("result").innerText = "Tháng " + month + " có " + days + " ngày."
+        }
+    </script>
+</body>
+</html>

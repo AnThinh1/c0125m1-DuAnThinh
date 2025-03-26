@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khách hàng</title>
+</head>
+<body>
+
+    <h2>Quản lý khách hàng</h2>
+
+    <!-- Form nhập thông tin khách hàng -->
+    <label>Mã khách hàng:</label>
+    <input type="text" id="customerId"><br>
+
+    <label>Tên khách hàng:</label>
+    <input type="text" id="customerName"><br>
+
+    <label>Số điện thoại:</label>
+    <input type="text" id="customerPhone"><br>
+
+    <label>Địa chỉ:</label>
+    <input type="text" id="customerAddress"><br>
+
+    <label>Email:</label>
+    <input type="email" id="customerEmail"><br>
+
+    <button onclick="addCustomer()">Thêm khách hàng</button>
+    <button onclick="showTable()">Hiển thị danh sách</button>
+
+    <!-- Bảng danh sách khách hàng -->
+    <table id="customerTable" border="1" style="display: none; margin-top: 10px;">
+        <thead>
+            <tr>
+                <th>Mã KH</th>
+                <th>Tên KH</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        // Lớp Khách hàng
+        class Customer {
+            constructor(id, name, phone, address, email) {
+                this.id = id;
+                this.name = name;
+                this.phone = phone;
+                this.address = address;
+                this.email = email;
+            }
+        }
+
+        // Lớp Quản lý khách hàng
+        class CustomerManager {
+            constructor() {
+                this.customers = [];
+            }
+
+            addCustomer(customer) {
+                this.customers.push(customer);
+                alert("Thêm khách hàng thành công!");
+            }
+
+            getCustomers() {
+                return this.customers;
+            }
+        }
+
+        let customerManager = new CustomerManager(); // Tạo đối tượng quản lý khách hàng
+
+        function addCustomer() {
+            let id = document.getElementById("customerId").value;
+            let name = document.getElementById("customerName").value;
+            let phone = document.getElementById("customerPhone").value;
+            let address = document.getElementById("customerAddress").value;
+            let email = document.getElementById("customerEmail").value;
+
+            if (id && name && phone && address && email) {
+                let newCustomer = new Customer(id, name, phone, address, email);
+                customerManager.addCustomer(newCustomer);
+            } else {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+            }
+        }
+
+        function showTable() {
+            let table = document.getElementById("customerTable");
+            let tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = ""; // Xóa dữ liệu cũ
+
+            let customers = customerManager.getCustomers();
+            for (let i = 0; i < customers.length; i++) {
+                let row = "<tr>" +
+                    "<td>" + customers[i].id + "</td>" +
+                    "<td>" + customers[i].name + "</td>" +
+                    "<td>" + customers[i].phone + "</td>" +
+                    "<td>" + customers[i].address + "</td>" +
+                    "<td>" + customers[i].email + "</td>" +
+                    "</tr>";
+
+                tableBody.innerHTML += row;
+            }
+
+            table.style.display = "table"; // Hiển thị bảng
+        }
+    </script>
+
+</body>
+</html>
