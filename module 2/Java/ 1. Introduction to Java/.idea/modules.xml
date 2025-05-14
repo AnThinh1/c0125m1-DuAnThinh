@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ 1. Introduction to Java.iml" filepath="$PROJECT_DIR$/.idea/ 1. Introduction to Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/BodyMassIndex/BodyMassIndex.iml" filepath="$PROJECT_DIR$/BodyMassIndex/BodyMassIndex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChuyenDoiTienTe/ChuyenDoiTienTe.iml" filepath="$PROJECT_DIR$/ChuyenDoiTienTe/ChuyenDoiTienTe.iml" />
       <module fileurl="file://$PROJECT_DIR$/LeapYearCalculator/LeapYearCalculator.iml" filepath="$PROJECT_DIR$/LeapYearCalculator/LeapYearCalculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoiChao/LoiChao.iml" filepath="$PROJECT_DIR$/LoiChao/LoiChao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Operator-Expression/Operator-Expression.iml" filepath="$PROJECT_DIR$/Operator-Expression/Operator-Expression.iml" />
