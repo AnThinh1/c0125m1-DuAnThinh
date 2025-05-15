@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2.VongLapTrongJava.iml" filepath="$PROJECT_DIR$/2.VongLapTrongJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Draw-geometry/Draw-geometry.iml" filepath="$PROJECT_DIR$/Draw-geometry/Draw-geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interest-Calculator/Interest-Calculator.iml" filepath="$PROJECT_DIR$/Interest-Calculator/Interest-Calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/greatest-common-factor/greatest-common-factor.iml" filepath="$PROJECT_DIR$/greatest-common-factor/greatest-common-factor.iml" />
     </modules>
