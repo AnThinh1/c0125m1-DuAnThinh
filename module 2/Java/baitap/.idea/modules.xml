@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaiTapThem/BaiTapThem.iml" filepath="$PROJECT_DIR$/BaiTapThem/BaiTapThem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP_ThucHanh/OOP_ThucHanh.iml" filepath="$PROJECT_DIR$/OOP_ThucHanh/OOP_ThucHanh.iml" />
       <module fileurl="file://$PROJECT_DIR$/baitap.iml" filepath="$PROJECT_DIR$/baitap.iml" />
     </modules>
   </component>
