@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AccessModifier_Static method_StaticProperty/AccessModifier_Static method_StaticProperty.iml" filepath="$PROJECT_DIR$/AccessModifier_Static method_StaticProperty/AccessModifier_Static method_StaticProperty.iml" />
       <module fileurl="file://$PROJECT_DIR$/BaiTapThem/BaiTapThem.iml" filepath="$PROJECT_DIR$/BaiTapThem/BaiTapThem.iml" />
       <module fileurl="file://$PROJECT_DIR$/HeThongMaSVTuDong/HeThongMaSVTuDong.iml" filepath="$PROJECT_DIR$/HeThongMaSVTuDong/HeThongMaSVTuDong.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP_ThucHanh/OOP_ThucHanh.iml" filepath="$PROJECT_DIR$/OOP_ThucHanh/OOP_ThucHanh.iml" />
