@@ -1,11 +1,9 @@
-package static_method;
-
 public class Student {
     private String name;
     private int rollno;
     private static String college = "BBDIT";
 
-    Student (int r, String n) {
+    Student(int r, String n) {
         rollno = r;
         name = n;
     }
