@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Circle/Circle.iml" filepath="$PROJECT_DIR$/Circle/Circle.iml" />
       <module fileurl="file://$PROJECT_DIR$/StaticMethod/StaticMethod.iml" filepath="$PROJECT_DIR$/StaticMethod/StaticMethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/StaticProperty/StaticProperty.iml" filepath="$PROJECT_DIR$/StaticProperty/StaticProperty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Student/Student.iml" filepath="$PROJECT_DIR$/Student/Student.iml" />
     </modules>
   </component>
 </project>
