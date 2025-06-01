@@ -5,5 +5,5 @@ public class Main {
 
         car1.display();
         car2.display();
-        }
     }
+}
