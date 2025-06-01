@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/4.LopVaDoiTuongTrongJava.iml" filepath="$PROJECT_DIR$/4.LopVaDoiTuongTrongJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Fan/Fan.iml" filepath="$PROJECT_DIR$/Fan/Fan.iml" />
       <module fileurl="file://$PROJECT_DIR$/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/Rectangle/Rectangle.iml" />
       <module fileurl="file://$PROJECT_DIR$/Static_property/Static_property.iml" filepath="$PROJECT_DIR$/Static_property/Static_property.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StopWatch/StopWatch.iml" filepath="$PROJECT_DIR$/StopWatch/StopWatch.iml" />
       <module fileurl="file://$PROJECT_DIR$/static_method/static_method.iml" filepath="$PROJECT_DIR$/static_method/static_method.iml" />
     </modules>
   </component>
