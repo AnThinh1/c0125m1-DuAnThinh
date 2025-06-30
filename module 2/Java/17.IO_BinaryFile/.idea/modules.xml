@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/17.IO_BinaryFile.iml" filepath="$PROJECT_DIR$/17.IO_BinaryFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DocVaGhiDSSV/DocVaGhiDSSV.iml" filepath="$PROJECT_DIR$/DocVaGhiDSSV/DocVaGhiDSSV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileDungLuongLon/FileDungLuongLon.iml" filepath="$PROJECT_DIR$/FileDungLuongLon/FileDungLuongLon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuanLiSanPham/QuanLiSanPham.iml" filepath="$PROJECT_DIR$/QuanLiSanPham/QuanLiSanPham.iml" />
+    </modules>
+  </component>
+</project>
