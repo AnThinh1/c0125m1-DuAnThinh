@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/11.DSA_Stack_Queue.iml" filepath="$PROJECT_DIR$/11.DSA_Stack_Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DaoNguocMang/DaoNguocMang.iml" filepath="$PROJECT_DIR$/DaoNguocMang/DaoNguocMang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TreeMap/TreeMap.iml" filepath="$PROJECT_DIR$/TreeMap/TreeMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrienKhaiQueue/TrienKhaiQueue.iml" filepath="$PROJECT_DIR$/TrienKhaiQueue/TrienKhaiQueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrienKhaiStack/TrienKhaiStack.iml" filepath="$PROJECT_DIR$/TrienKhaiStack/TrienKhaiStack.iml" />
+    </modules>
+  </component>
+</project>
