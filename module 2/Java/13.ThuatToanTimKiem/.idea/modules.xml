@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/13.ThuatToanTimKiem.iml" filepath="$PROJECT_DIR$/13.ThuatToanTimKiem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BinarySearch/BinarySearch.iml" filepath="$PROJECT_DIR$/BinarySearch/BinarySearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimChuoiTangDan/TimChuoiTangDan.iml" filepath="$PROJECT_DIR$/TimChuoiTangDan/TimChuoiTangDan.iml" />
+    </modules>
+  </component>
+</project>
