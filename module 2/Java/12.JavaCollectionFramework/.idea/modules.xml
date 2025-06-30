@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/12.JavaCollectionFramework.iml" filepath="$PROJECT_DIR$/12.JavaCollectionFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArrayList_LinkedList/ArrayList_LinkedList.iml" filepath="$PROJECT_DIR$/ArrayList_LinkedList/ArrayList_LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Comparable_Comparator/Comparable_Comparator.iml" filepath="$PROJECT_DIR$/Comparable_Comparator/Comparable_Comparator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HashMap_HashSet/HashMap_HashSet.iml" filepath="$PROJECT_DIR$/HashMap_HashSet/HashMap_HashSet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestMap/TestMap.iml" filepath="$PROJECT_DIR$/TestMap/TestMap.iml" />
+    </modules>
+  </component>
+</project>
