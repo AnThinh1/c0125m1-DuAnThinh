@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/19.String_Regex.iml" filepath="$PROJECT_DIR$/19.String_Regex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Validate Class/Validate Class.iml" filepath="$PROJECT_DIR$/Validate Class/Validate Class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Validate account/Validate account.iml" filepath="$PROJECT_DIR$/Validate account/Validate account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Validate email/Validate email.iml" filepath="$PROJECT_DIR$/Validate email/Validate email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ValidatePhoneNumber/ValidatePhoneNumber.iml" filepath="$PROJECT_DIR$/ValidatePhoneNumber/ValidatePhoneNumber.iml" />
+    </modules>
+  </component>
+</project>
