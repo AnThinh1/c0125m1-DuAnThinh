@@ -9,5 +9,11 @@ UPDATE Student
 SET ClassId = 2
 WHERE StudentName = "Hung" and StudentId = "1";
 --
-SELECT S.StudentName, SU.SubName, M.Mark
-From Student S join 
+select S.StudentName, B.SubName, M.Mark
+from Student S join Mark M on S.StudentId = M.StudentId
+join Subject B on M.SubId= B.SubId
+Order by M.Mark ASC;
+
+
+
+
