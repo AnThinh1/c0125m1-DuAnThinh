@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Layout RWD</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Verdana, sans-serif;
+      font-size: 0.9em;
+    }
+
+    header {
+      padding: 10px;
+      color: white;
+      background-color: black;
+    }
+     header ul li {
+      display: inline;
+      margin-right: 20px;
+      padding: 5px 10px;
+      background-color: black;
+      color: white;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #eee;
+      padding: 20px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  text-align: right;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <ul>
+      <li>Logo</li>
+      <li>Home</li>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
+  </header>
+
+  <div class="main">
+    <aside class="sidebar">Sidebar content</aside>
+    <div class="content">
+        <h1>Welcome</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at. Sed euismod, nisi vel consectetur interdum, nisl nisi aliquet nunc, nec facilisis enim erat non quam. Donec ac ligula nec leo facilisis tincidunt. Nulla facilisi. Suspendisse potenti. Donec vel libero a odio commodo convallis.
+        </p>
+        <hr />
+        <h2>Test</h2>
+        <p>
+Lorem ipsum...
+        </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Footer text</p>
+  </footer>
+</body>
+</html>

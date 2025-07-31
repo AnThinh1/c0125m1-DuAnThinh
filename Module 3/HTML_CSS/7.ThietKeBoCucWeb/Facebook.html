@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Giản Lược</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #1877f2;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  margin-top: 60px; 
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  top: 60px;
+  left: 0;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex: 1;
+}
+
+    </style>
+</head>
+<body>
+  <header>Facebook lite</header>
+
+  <div class="container">
+    <aside class="sidebar">
+        <ul>
+        <li>Trang chủ</li>
+        <li>Bạn bè</li>
+        <li>Nhóm</li>
+        <li>Marketplace</li>
+      </ul>
+    </aside>
+    <main class="content">Nội dung chính</main>
+  </div>
+</body>
+</html>
