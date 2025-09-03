@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Jakarta Servlet API (Tomcat 11)
+    providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+    // Jakarta JSTL API
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+
+    // Jakarta JSTL Implementation
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.0'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
