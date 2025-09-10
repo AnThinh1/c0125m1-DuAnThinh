@@ -25,8 +25,13 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        List<Product> products = productDAO.getAllProducts();
+        String category = request.getParameter("category");
+        List<Product> products;
+        if (category != null && !category.isEmpty()) {
+            products = productDAO.getProductsByCategory(category);
+        } else {
+            products = productDAO.getAllProducts();
+        }
         request.setAttribute("products", products);
         request.getRequestDispatcher("/WEB-INF/list.jsp").forward(request, response);
     }

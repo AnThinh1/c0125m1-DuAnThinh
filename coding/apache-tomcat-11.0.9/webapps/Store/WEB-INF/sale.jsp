@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>COMMENCAL</title>
+    <title>Hoá đơn</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -88,6 +90,21 @@
             height: 100vh;
             object-fit: cover;
         }
+        .form-overlay {
+            position: fixed;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 83vh;
+            max-width: 600px;
+            width: 90%;
+            background-color: rgba(248, 249, 250, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            overflow-y: auto; overflow-x: auto;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +128,7 @@
 <!-- Thanh công cụ -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">AT.EnduroShop</a>
+        <a class="navbar-brand" href="index.jsp">AT.EnduroShop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -125,6 +142,34 @@
         </div>
     </div>
 </nav>
+
+<div class="form-overlay">
+    <h3>Thông tin hoá đơn</h3>
+    <form action="${pageContext.request.contextPath}/sale" method="post">
+        <!-- Chọn sản phẩm -->
+        <label>Sản phẩm:</label><br>
+        <select name="productId" class="form-select" required>
+            <c:forEach var="product" items="${productList}">
+                <option value="${product.id}">
+                        ${product.name} - ${product.brand} (Còn: ${product.stockQuantity})
+                </option>
+            </c:forEach>
+        </select>
+
+        <!-- Số lượng -->
+        <label>Số lượng bán:</label><br>
+        <input type="number" name="quantity" value="1" min="1" required><br><br>
+
+        <!-- Thông tin khách hàng -->
+        <label>Tên khách hàng:</label><br>
+        <input type="text" name="customerName" required><br><br>
+
+        <label>Số điện thoại:</label><br>
+        <input type="text" name="customerPhone" required><br><br>
+
+        <button type="submit">Xác nhận bán</button>
+    </form>
+</div>
 
 <!-- Slider -->
 <div id="bikeCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -149,6 +194,7 @@
         <span class="carousel-control-next-icon"></span>
     </button>
 </div>
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

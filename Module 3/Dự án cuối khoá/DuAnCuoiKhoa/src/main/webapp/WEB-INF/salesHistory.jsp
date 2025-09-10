@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Danh sách sản phẩm</title>
+    <title>Lịch sử bán hàng</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -31,12 +31,10 @@
         .navbar .nav-link:hover { color: #FFD700 !important; }
         .carousel { margin-top: 120px; height: 500px; position: relative; }
         .carousel-item img { height: 100vh; object-fit: cover; }
-        .table-overlay { position: fixed; top: 56%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; width: 1100px; max-height: 70vh; background-color: rgba(248, 249, 250, 0.85); padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 2000; overflow-y: auto; overflow-x: auto; }
+        .table-overlay { position: fixed; top: 56%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; width: 1100px; max-height: 70vh; background-color: rgba(248, 249, 250, 0.9); padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 2000; overflow-y: auto; overflow-x: auto; }
         .table-overlay table { width: 100%; border-collapse: collapse; }
         .table-overlay th, .table-overlay td { border: 1px solid #ddd; padding: 8px; text-align: center; }
         .table-overlay th { background-color: #f2f2f2; }
-        .add-product { margin-bottom: 15px; display: inline-block; }
-        .quantity-zero { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -55,6 +53,7 @@
     </div>
     <div class="yellow-bar"></div>
 </div>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.jsp">AT.EnduroShop</a>
@@ -65,7 +64,7 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link" href="list">Danh sách sản phẩm</a></li>
                 <li class="nav-item"><a class="nav-link" href="create">Thêm sản phẩm</a></li>
-                <li class="nav-item"><a class="nav-link" href="salesHistory">Lịch sử bán</a></li>
+                <li class="nav-item"><a class="nav-link active" href="salesHistory">Lịch sử bán</a></li>
                 <li class="nav-item"><a class="nav-link" href="revenue">Doanh thu</a></li>
             </ul>
         </div>
@@ -95,65 +94,36 @@
     </button>
 
     <div class="table-overlay">
-        <form action="list" method="get" class="mb-3 d-flex align-items-center">
-            <label for="category" class="me-2 fw-bold">Lọc theo loại xe:</label>
-            <select name="category" id="category" class="form-select me-2" style="width: 250px;">
-                <option value="">-- Tất cả --</option>
-                <option value="Xc trail">XC Trail</option>
-                <option value="Hardtail all mountain">Hardtail All Mountain</option>
-                <option value="Fullsuspension enduro">Fullsuspension Enduro</option>
-                <option value="Dirtjump">Dirtjump</option>
-            </select>
-            <button type="submit" class="btn btn-dark">Lọc</button>
-        </form>
+        <h3 class="text-center mb-3">Lịch sử bán hàng</h3>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Tên xe</th>
-                <th>Loại</th>
-                <th>Hãng</th>
-                <th>Khung</th>
-                <th>Năm</th>
-                <th>Size</th>
-                <th>Giá</th>
-                <th>Ngày tạo</th>
-                <th>Sửa đổi lần cuối</th>
+                <th>ID xe</th>
                 <th>Số lượng</th>
+                <th>Tên khách hàng</th>
+                <th>Số điện thoại</th>
+                <th>Ngày bán</th>
                 <th>Chỉnh sửa</th>
             </tr>
-            <c:forEach var="p" items="${products}">
+            <c:forEach var="sale" items="${sales}">
                 <tr>
-                    <td>${p.id}</td>
-                    <td>${p.name}</td>
-                    <td>${p.category}</td>
-                    <td>${p.brand}</td>
-                    <td>${p.frameMaterial}</td>
-                    <td>${p.year}</td>
-                    <td>${p.size}</td>
-                    <td>${p.price}€</td>
-                    <td>${p.createdAt}</td>
-                    <td>${p.updatedAt}</td>
+                    <td>${sale.id}</td>
+                    <td>${sale.productName}</td>
+                    <td>${sale.productId}</td>
+                    <td>${sale.quantity}</td>
+                    <td>${sale.customerName}</td>
+                    <td>${sale.customerPhone}</td>
+                    <td>${sale.saleDate}</td>
                     <td>
-                        <c:choose>
-                            <c:when test="${p.stockQuantity > 0}">
-                                ${p.stockQuantity}
-                            </c:when>
-                            <c:otherwise>
-                                <span class="quantity-zero">Hết hàng</span>
-                            </c:otherwise>
-                        </c:choose>
-                    </td>
-                    <td>
-                        <a href="${pageContext.request.contextPath}/edit?id=${p.id}" class="btn btn-warning btn-sm">Sửa</a>
-                        <a href="${pageContext.request.contextPath}/delete?id=${p.id}" class="btn btn-danger btn-sm"
+                        <a href="${pageContext.request.contextPath}/edit-sale?id=${sale.id}" class="btn btn-warning btn-sm">Sửa</a>
+                        <a href="${pageContext.request.contextPath}/delete-sale?id=${sale.id}" class="btn btn-danger btn-sm"
                            onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-        <br>
     </div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

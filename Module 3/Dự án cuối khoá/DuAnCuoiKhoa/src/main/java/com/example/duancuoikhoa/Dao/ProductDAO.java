@@ -10,7 +10,7 @@ import java.util.List;
 public class ProductDAO {
 
     public void insert(Product product) {
-        String sql = "INSERT INTO product (name, category, brand, frame_material, year, size, price, stock_quantity) " +
+        String sql = "INSERT INTO product (name, category, brand, frame_material, year, size, price, stock_quantity, created_at, updated_at) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -23,12 +23,42 @@ public class ProductDAO {
             stmt.setString(6, product.getSize());
             stmt.setBigDecimal(7, product.getPrice());
             stmt.setInt(8, product.getStockQuantity());
+            stmt.setTimestamp(9, new Timestamp(System.currentTimeMillis()));
+            stmt.setTimestamp(10, new Timestamp(System.currentTimeMillis()));
 
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+    public List<Product> getProductsByCategory(String category) {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT * FROM product WHERE category = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, category);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("category"),
+                        rs.getString("brand"),
+                        rs.getString("frame_material"),
+                        rs.getInt("year"),
+                        rs.getString("size"),
+                        rs.getBigDecimal("price"),
+                        rs.getInt("stock_quantity"),
+                        rs.getTimestamp("created_at"),
+                        rs.getTimestamp("updated_at")
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
 
     public List<Product> getAllProducts() {
         List<Product> list = new ArrayList<>();
