@@ -46,23 +46,48 @@ public class EditSaleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            int id = Integer.parseInt(request.getParameter("id"));   // lấy id để update
+            int id = Integer.parseInt(request.getParameter("id"));   // ID giao dịch
             int productId = Integer.parseInt(request.getParameter("productId"));
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            int newQuantity = Integer.parseInt(request.getParameter("quantity"));
             String customerName = request.getParameter("customerName");
             String customerPhone = request.getParameter("customerPhone");
 
+            // Lấy giao dịch cũ để so sánh
+            Sale oldSale = saleDAO.findById(id);
+            if (oldSale == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Không tìm thấy giao dịch");
+                return;
+            }
+
+            int oldQuantity = oldSale.getQuantity();
+            int diff = newQuantity - oldQuantity;
+
+            // Nếu có sự thay đổi thì cập nhật số lượng trong kho
+            if (diff != 0) {
+                Product product = productDAO.getProductById(productId);
+                if (product != null) {
+                    int updatedStock = product.getStockQuantity() - diff;
+                    if (updatedStock < 0) {
+                        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Số lượng trong kho không đủ");
+                        return;
+                    }
+                    product.setStockQuantity(updatedStock);
+                    productDAO.update(product);
+                }
+            }
+
+            // Cập nhật lại sale
             Sale sale = new Sale();
             sale.setId(id);
             sale.setProductId(productId);
-            sale.setQuantity(quantity);
+            sale.setQuantity(newQuantity);
             sale.setCustomerName(customerName);
             sale.setCustomerPhone(customerPhone);
             sale.setSaleDate(LocalDateTime.now());
 
             saleDAO.update(sale);
 
-            // redirect về danh sách lịch sử bán
+            // Redirect về danh sách lịch sử bán
             response.sendRedirect("salesHistory");
         } catch (Exception e) {
             e.printStackTrace();
