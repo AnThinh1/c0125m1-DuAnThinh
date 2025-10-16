@@ -7,7 +7,7 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../../2.Ứng dụng quản lý danh sách khách hàng/Quanlikhachhang" />
+            <option value="$PROJECT_DIR$/../../1.Tổng quan Spring MVC/Quanlikhachhang" />
           </set>
         </option>
       </GradleProjectSettings>

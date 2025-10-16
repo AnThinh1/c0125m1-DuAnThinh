@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>ListCustomer</title>
+</head>
+<body>
+<div class="container"> <h3>Customers</h3>
+
+    <table id="customers" class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>FName</th>
+            <th>LName</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row,rowStat : ${customers}">
+            <td th:text="${row.firstName}"></td>
+            <td th:text="${row.lastName}"></td>
+            <td th:text="${row.email}"></td>
+            <td>
+                <a th:href="@{/customers/{id}/edit(id=${row.id})}" class="btn btn-warning btn-sm">
+                    Edit
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/customers/{id}/delete(id=${row.id})}" class="btn btn-danger btn-sm">
+                    Delete
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/customers/{id}/view(id=${row.id})}" class="btn btn-info btn-sm">
+                    View
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

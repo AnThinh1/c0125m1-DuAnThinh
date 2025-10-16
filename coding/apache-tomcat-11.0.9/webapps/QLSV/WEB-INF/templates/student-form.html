@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm sinh viên</title>
+</head>
+<body>
+<h1>Thêm sinh viên mới</h1>
+
+<form th:action="@{/students/create}" method="post">
+    <label>Mã SV:</label><br>
+    <input type="text" name="code" required><br><br>
+
+    <label>Họ tên:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Điểm:</label><br>
+    <input type="number" name="score" step="0.1" min="0" max="10" required><br><br>
+
+    <button type="submit">Lưu</button>
+</form>
+
+<br>
+<a th:href="@{/students}">⬅ Quay lại danh sách</a>
+</body>
+</html>

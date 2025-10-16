@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VND → USD</title>
+</head>
+<body>
+<h2>Chuyển đổi VND → USD</h2>
+
+<form th:action="@{/convert2}" th:object="${currency}" method="post">
+    <label>Nhập VND: </label>
+    <input type="number" step="0.01" th:field="*{vnd}"/>
+    <button type="submit">Chuyển đổi</button>
+</form>
+
+<p th:if="${currency.usd != 0}">
+    Kết quả: <b th:text="${currency.usd}"></b> USD
+</p>
+
+<a th:href="@{/convert1}">Chuyển sang USD → VND</a>
+</body>
+</html>

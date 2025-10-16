@@ -1,0 +1,36 @@
+{
+  "vendor": "Amazon",
+  "product": "Corretto",
+  "jdk_version_major": 8,
+  "jdk_version": "1.8.0_462",
+  "suggested_sdk_name": "corretto-1.8",
+  "shared_index_aliases": [
+    "corretto-1.8.0_462",
+    "corretto-8",
+    "corretto-1.8",
+    "1.8.0_462",
+    "8",
+    "1.8"
+  ],
+  "packages": [
+    {
+      "os": "macOS",
+      "arch": "aarch64",
+      "version": "1.8.0_462",
+      "url": "https://corretto.aws/downloads/resources/8.462.08.1/amazon-corretto-8.462.08.1-macosx-aarch64.tar.gz",
+      "package_type": "targz",
+      "unpack_prefix_filter": "amazon-corretto-8.jdk/Contents/Home",
+      "package_root_prefix": "amazon-corretto-8.jdk",
+      "package_to_java_home_prefix": "Contents/Home",
+      "archive_file_name": "amazon-corretto-8.462.08.1-macosx-aarch64.tar.gz",
+      "install_folder_name": "corretto-1.8.0_462",
+      "archive_size": 102955099,
+      "unpacked_size": 208075019,
+      "sha256": "a71f369811f93b7aea3475daa79111bd2aea28dd088690621bb3fb5a46d888d1",
+      "filter": {
+        "type": "supports_arch",
+        "arch": "aarch64"
+      }
+    }
+  ]
+}

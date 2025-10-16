@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+</head>
+<body>
+<h1>Danh sách sinh viên</h1>
+
+<p th:if="${message}" style="color:green" th:text="${message}"></p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Điểm</th>
+        <th>Xếp loại</th>
+        <th>Chi tiết</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.code}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.score}"></td>
+        <td th:text="${student.gpa}"></td>
+        <td><a th:href="@{'/students/' + ${student.code}}">Xem</a></td>
+    </tr>
+</table>
+
+<br>
+<a th:href="@{/students/create}">+ Thêm sinh viên mới</a>
+</body>
+</html>
