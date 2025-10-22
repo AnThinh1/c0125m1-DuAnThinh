@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="90fdcc4b-ae51-4a1f-b254-590b53ffcf80" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../1.Tổng quan Spring MVC/Dictionary/dictionary/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../1.Tổng quan Spring MVC/Dictionary/dictionary/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../1.Tổng quan Spring MVC/Dictionary/dictionary/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../1.Tổng quan Spring MVC/Dictionary/dictionary/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../1.Tổng quan Spring MVC/Dictionary/dictionary/src/main/java/com/codegym/dictionary/model/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. Views &amp; Thymeleaf/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3. Views &amp; Thymeleaf/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="34AatKOa7SIHO6Ytgu8ryW7i6xV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90fdcc4b-ae51-4a1f-b254-590b53ffcf80" name="Changes" comment="" />
+      <created>1760659045046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760659045046</updated>
+      <workItem from="1760659046283" duration="3000" />
+      <workItem from="1760659069507" duration="266000" />
+      <workItem from="1760659352738" duration="14000" />
+      <workItem from="1760659373465" duration="23000" />
+      <workItem from="1760659403526" duration="84000" />
+      <workItem from="1760659492181" duration="13000" />
+      <workItem from="1760659511197" duration="1830000" />
+      <workItem from="1760685340181" duration="707000" />
+      <workItem from="1760687124773" duration="58000" />
+      <workItem from="1760687259057" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

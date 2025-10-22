@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển Anh - Việt</title>
+</head>
+<body>
+<h2>Từ điển Anh - Việt</h2>
+
+<form th:action="@{/dictionary}" th:object="${dictionary}" method="post">
+    <label>Nhập từ tiếng Anh:</label>
+    <input type="text" th:field="*{english}" placeholder="hello"/>
+    <button type="submit">Dịch</button>
+</form>
+
+<p>Kết quả: <span th:text="${dictionary.vietnamese}"></span></p>
+
+</body>
+</html>
