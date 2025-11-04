@@ -27,4 +27,4 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
         filter.setForceEncoding(true);
         return new Filter[] { filter };
     }
-}
+} return :{}

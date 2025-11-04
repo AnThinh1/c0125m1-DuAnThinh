@@ -1,6 +1,4 @@
 package com.codegym.mobile_shop.model;
-
-
 import jakarta.persistence.*;
 
 @Entity
