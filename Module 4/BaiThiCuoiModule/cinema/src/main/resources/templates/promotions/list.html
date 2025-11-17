@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách khuyến mãi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script type="text/javascript">
+        function confirmDelete(id, title) {
+            if (confirm('Bạn có muốn xóa Chương trình khuyến mãi "' + title + '"?')) {
+                window.location.href = '/promotions/delete/' + id;
+            }
+        }
+    </script>
+</head>
+<body class="p-4">
+
+<h2 class="mb-3">Danh sách Khuyến Mãi</h2>
+
+<a th:href="@{/promotions/add}" class="btn btn-primary mb-3">Thêm khuyến mãi</a>
+
+
+<form method="get" th:action="@{/promotions}" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <input type="number" step="1000" name="discount" placeholder="Mức giảm giá" class="form-control"
+               th:value="${discountFilter}">
+    </div>
+    <div class="col-md-3">
+        <input type="date" name="start" placeholder="Ngày bắt đầu" class="form-control"
+               th:value="${startFilter}">
+    </div>
+    <div class="col-md-3">
+        <input type="date" name="end" placeholder="Ngày kết thúc" class="form-control"
+               th:value="${endFilter}">
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-success">Tìm kiếm</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Tiêu đề</th>
+        <th>Mức giảm giá</th>
+        <th>Ngày bắt đầu</th>
+        <th>Ngày kết thúc</th>
+        <th>Chi tiết</th>
+        <th>Chức năng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="promotion : ${promotions}">
+        <td th:text="${promotion.title}"></td>
+        <td th:text="${promotion.discount}"></td>
+        <td th:text="${promotion.startDate}"></td>
+        <td th:text="${promotion.endDate}"></td>
+        <td th:text="${promotion.description}"></td>
+        <td>
+            <a th:href="@{'/promotions/edit/' + ${promotion.id}}" class="btn btn-warning btn-sm">Sửa</a>
+            <button type="button" class="btn btn-danger btn-sm"
+                    th:attr="onclick=|confirmDelete(${promotion.id}, '${promotion.title}')|">
+                Xóa
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
