@@ -32,7 +32,7 @@ public class PromotionController {
 
         List<Promotion> promotions = promotionService.search(discount, startDate, endDate);
 
-        // Truyền giá trị search vào model
+
         model.addAttribute("promotions", promotions);
         model.addAttribute("discountFilter", discount);
         model.addAttribute("startFilter", start);
